@@ -9,10 +9,17 @@ public class Note {
   private String content;
   private Instant createdAt;
 
-  public Note(String content, int id, String title) {
-    this.content = content;
+  public Note(int id, String title, String content, Instant createdAt) {
     this.id = id;
     this.title = title;
+    this.content = content;
+    this.createdAt = createdAt;
+  }
+
+  public Note(int id, String title, String content) {
+    this.id = id;
+    this.title = title;
+    this.content = content;
   }
 
   public int getId() {

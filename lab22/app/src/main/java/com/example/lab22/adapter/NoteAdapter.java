@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lab22.R;
 import com.example.lab22.holder.NoteViewHolder;
+import com.example.lab22.listener.OnNoteClickListener;
 import com.example.lab22.model.Note;
 
 import java.time.ZoneId;
@@ -19,11 +20,14 @@ import java.util.List;
 public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder> {
 
   private final List<Note> notes;
+  private OnNoteClickListener clickListener;
   DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
 
-  public NoteAdapter(List<Note> notes) {
+  public NoteAdapter(List<Note> notes, OnNoteClickListener clickListener) {
     this.notes = notes;
+    this.clickListener = clickListener;
   }
+
 
   @NonNull
   @Override
@@ -40,6 +44,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder> {
     holder.title.setText(note.getTitle());
     holder.content.setText(note.getContent());
     holder.createAt.setText(dateStr);
+    holder.itemView.setOnClickListener(v ->{
+      clickListener.onNoteClick(note, position);
+    });
   }
 
   @Override
