@@ -1,9 +1,61 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Lab22" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- Приложение всегда светлое. В values-night тот же родитель. -->
+    <style name="Base.Theme.Lab22" parent="Theme.Material3.Light.NoActionBar" />
+
+    <style name="Theme.Lab22" parent="Base.Theme.Lab22">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary_container</item>
+
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorSurfaceContainerHigh">@color/surface</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="colorOutlineVariant">@color/outline</item>
+        <item name="colorError">@color/error</item>
+
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="colorControlActivated">@color/primary</item>
+
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Lab22.Dialog</item>
     </style>
 
-    <style name="Theme.Lab22" parent="Base.Theme.Lab22" />
+    <!-- Диалог подтверждения: скруглённый, кнопка «Удалить» красная -->
+    <style name="ThemeOverlay.Lab22.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Lab22.Large</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.Lab22.Button.Danger</item>
+    </style>
+
+    <style name="ShapeAppearance.Lab22.Large" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <!-- Текстовая кнопка для опасного действия -->
+    <style name="Widget.Lab22.Button.Danger" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/error</item>
+        <item name="rippleColor">@color/error_container</item>
+    </style>
+
+    <style name="Widget.Lab22.Button.DangerText" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/error</item>
+        <item name="rippleColor">@color/error_container</item>
+    </style>
+
+    <style name="TextAppearance.Lab22.ScreenTitle" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
 </resources>

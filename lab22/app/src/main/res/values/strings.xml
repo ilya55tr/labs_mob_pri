@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">lab22</string>
+
+    <string name="notes_title">Заметки</string>
+    <string name="notes_subtitle">Всё важное — в одном месте</string>
+    <string name="add_note">Новая заметка</string>
+
+    <string name="hint_title">Заголовок</string>
+    <string name="hint_content">Начните писать…</string>
+    <string name="save">Сохранить</string>
+    <string name="delete">Удалить</string>
+    <string name="back">Назад</string>
+
+    <string name="delete_dialog_title">Удалить заметку?</string>
+    <string name="delete_dialog_message">Это действие нельзя отменить.</string>
+    <string name="cancel">Отмена</string>
 </resources>

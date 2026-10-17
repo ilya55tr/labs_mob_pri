@@ -1,30 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/title"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="25dp"
-        android:text="Заметки" />
-    <Button
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="24dp"
+            android:text="@string/notes_title"
+            android:textAppearance="@style/TextAppearance.Lab22.ScreenTitle" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="12dp"
+            android:text="@string/notes_subtitle"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="96dp"
+            tools:listitem="@layout/item_note" />
+    </LinearLayout>
+
+    <!-- ExtendedFloatingActionButton наследует Button, поэтому код MainActivity менять не нужно -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/addNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"/>
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:text="@string/add_note"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/primary"
+        app:icon="@drawable/ic_add"
+        app:iconTint="@color/white"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Lab22.Large" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-
-</LinearLayout>
+</FrameLayout>
