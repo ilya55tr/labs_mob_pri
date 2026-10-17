@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/titleNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Заголовок"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/contentNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Так называемый текст"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:id="@+id/createAtNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
